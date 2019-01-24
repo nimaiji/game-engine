@@ -97,6 +97,15 @@ public class Main extends Application {
             }
         });
 
+        oneByBot_enter.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                Utils.PLAYER_NAME_1 = bplayer_field.getText().toString();
+                Utils.PLAYER_NAME_2 = "";
+                Log.d("Player 1", Utils.PLAYER_NAME_1);
+            }
+        });
+
         oneByOne.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
