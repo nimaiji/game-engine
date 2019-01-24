@@ -1,6 +1,8 @@
 package xo;
 
+import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
+import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
@@ -12,9 +14,12 @@ public class BoardUi extends GridPane {
 
     private final static int CELL_SIZE = 100;
     int row, column;
+    ObservableList list;
+    MenuUi menuUi = new MenuUi();
 
     BoardUi(int row, int column) {
         super();
+        this.list = this.getChildren();
         this.row = row;
         this.column = column;
         this.setPadding(new Insets(10));
@@ -32,5 +37,12 @@ public class BoardUi extends GridPane {
         }
 
     }
+
+    public MenuUi addMenu(){
+        list.add(this.menuUi);
+        Log.d("Menu Added to BoardUi","");
+        return this.menuUi;
+    }
+
 
 }
