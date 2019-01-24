@@ -27,8 +27,8 @@ public class Utils {
     public static String LOGO_DARK_PATH = "src/res/xodark.png";
 
     //User info
-    public static String USER_1 = "";
-    public static String USER_2 = "";
+    public static String PLAYER_NAME_1 = "";
+    public static String PLAYER_NAME_2 = "";
 
 
 }

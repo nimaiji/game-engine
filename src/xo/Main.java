@@ -88,6 +88,16 @@ public class Main extends Application {
             }
         });
 
+        oneByOne_enter.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                Utils.PLAYER_NAME_1 = playerOne_field.getText().toString();
+                Utils.PLAYER_NAME_2 = playerTwo_field.getText().toString();
+                Log.d("Player 1",Utils.PLAYER_NAME_1);
+                Log.d("Player 2",Utils.PLAYER_NAME_2);
+            }
+        });
+
         about.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
