@@ -34,21 +34,29 @@ public class Main extends Application {
         logoView.setFitHeight(120);
 
         //one by one scene
-        MenuUi onebyone_menu = new MenuUi();
+        MenuUi oneByOne_menu = new MenuUi();
         Label oneByOne_title = new Label("Wellcome to 1 Vs. 1 part...\nPlease insert your informations:");
         Label playerOne = new Label("First Player:");
         Label playerTwo = new Label("Second Player:");
         TextField playerOne_field = new TextField();
         TextField playerTwo_field = new TextField();
         Button oneByOne_enter = new Button("Start Game :D");
-        onebyone_menu.addAll(oneByOne_title, playerOne, playerOne_field, playerTwo, playerTwo_field,oneByOne_enter);
-        onebyone_menu.getStylesheets().add(MAIN_THEME);
+        oneByOne_menu.addAll(oneByOne_title, playerOne, playerOne_field, playerTwo, playerTwo_field, oneByOne_enter);
+        oneByOne_menu.getStylesheets().add(MAIN_THEME);
+
+        //one by bot scene
+        MenuUi oneByBot_menu = new MenuUi();
+        Label oneByBot_title = new Label("Wellcome to 1 vs. Bot part...\nPlease insert your information:");
+        Label bplayer = new Label("Name:");
+        TextField bplayer_field = new TextField();
+        Button oneByBot_enter = new Button("Start Game :D");
+        oneByBot_menu.addAll(oneByBot_title, bplayer, bplayer_field, oneByBot_enter);
+        oneByBot_menu.getStylesheets().add(MAIN_THEME);
 
         //making "about us" scene
         AboutUi aboutUi = new AboutUi();
         Text text = new Text(Utils.LOREM);
         text.setWrappingWidth(Utils.M_W_SIZE - 20);
-        //Button back = new Button("Back");
         aboutUi.addText(text);
         aboutUi.getStylesheets().add(MAIN_THEME);
 
@@ -67,9 +75,28 @@ public class Main extends Application {
         //scenes
         Scene about_scene = new Scene(aboutUi, Utils.M_W_SIZE, Utils.M_H_SIZE);
         Scene menu_scene = new Scene(menuUi, Utils.M_W_SIZE, Utils.M_H_SIZE);
-        Scene oneByOne_scene = new Scene(onebyone_menu, Utils.M_W_SIZE, Utils.M_H_SIZE);
+        Scene oneByOne_scene = new Scene(oneByOne_menu, Utils.M_W_SIZE, Utils.M_H_SIZE);
+        Scene oneByBot_scene = new Scene(oneByBot_menu, Utils.M_W_SIZE, Utils.M_H_SIZE);
 
         //onActions
+        oneByBot.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                //going to about us scene
+                primaryStage.setScene(oneByBot_scene);
+                primaryStage.setTitle(Utils.ONE_BY_BOT_TITLE);
+            }
+        });
+
+        oneByBot_menu.addMainMenuButton().setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                //going to main menu scene
+                primaryStage.setScene(menu_scene);
+                primaryStage.setTitle(Utils.MENU_TITLE);
+            }
+        });
+
         oneByOne.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -79,7 +106,7 @@ public class Main extends Application {
             }
         });
 
-        onebyone_menu.addMainMenuButton().setOnAction(new EventHandler<ActionEvent>() {
+        oneByOne_menu.addMainMenuButton().setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 //going to main menu scene
@@ -93,8 +120,8 @@ public class Main extends Application {
             public void handle(ActionEvent event) {
                 Utils.PLAYER_NAME_1 = playerOne_field.getText().toString();
                 Utils.PLAYER_NAME_2 = playerTwo_field.getText().toString();
-                Log.d("Player 1",Utils.PLAYER_NAME_1);
-                Log.d("Player 2",Utils.PLAYER_NAME_2);
+                Log.d("Player 1", Utils.PLAYER_NAME_1);
+                Log.d("Player 2", Utils.PLAYER_NAME_2);
             }
         });
 
