@@ -9,6 +9,8 @@ import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
@@ -18,7 +20,7 @@ import javafx.stage.Stage;
 import java.io.FileInputStream;
 
 public class Main extends Application {
-    static String MAIN_THEME = Utils.DARK_THEME;
+    static String MAIN_THEME = Utils.LIGHT_THEME;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -31,20 +33,27 @@ public class Main extends Application {
         logoView.setFitWidth(200);
         logoView.setFitHeight(120);
 
+        //one by one scene
+        MenuUi onebyone_menu = new MenuUi();
+        Label oneByOne_title = new Label("Wellcome to 1 Vs. 1 part...\nPlease insert your informations:");
+        Label playerOne = new Label("First Player:");
+        Label playerTwo = new Label("Second Player:");
+        TextField playerOne_field = new TextField();
+        TextField playerTwo_field = new TextField();
+        Button oneByOne_enter = new Button("Start Game :D");
+        onebyone_menu.addAll(oneByOne_title, playerOne, playerOne_field, playerTwo, playerTwo_field,oneByOne_enter);
+        onebyone_menu.getStylesheets().add(MAIN_THEME);
 
         //making "about us" scene
         AboutUi aboutUi = new AboutUi();
         Text text = new Text(Utils.LOREM);
         text.setWrappingWidth(Utils.M_W_SIZE - 20);
-        Button back = new Button("Back");
+        //Button back = new Button("Back");
         aboutUi.addText(text);
-        aboutUi.addButton(back);
-        aboutUi.setPadding(new Insets(Utils.M_P_SIZE));
         aboutUi.getStylesheets().add(MAIN_THEME);
 
         //making "menu" scene
         MenuUi menuUi = new MenuUi();
-        menuUi.setAlignment(Pos.CENTER);
         menuUi.getStylesheets().add(MAIN_THEME);
         Button oneByOne = new Button("1 vs. 1");
         Button oneByBot = new Button("1 vs. Bot");
@@ -58,8 +67,27 @@ public class Main extends Application {
         //scenes
         Scene about_scene = new Scene(aboutUi, Utils.M_W_SIZE, Utils.M_H_SIZE);
         Scene menu_scene = new Scene(menuUi, Utils.M_W_SIZE, Utils.M_H_SIZE);
+        Scene oneByOne_scene = new Scene(onebyone_menu, Utils.M_W_SIZE, Utils.M_H_SIZE);
 
         //onActions
+        oneByOne.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                //going to about us scene
+                primaryStage.setScene(oneByOne_scene);
+                primaryStage.setTitle(Utils.ONE_BY_ONE_TITLE);
+            }
+        });
+
+        onebyone_menu.addMainMenuButton().setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                //going to main menu scene
+                primaryStage.setScene(menu_scene);
+                primaryStage.setTitle(Utils.MENU_TITLE);
+            }
+        });
+
         about.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -70,11 +98,12 @@ public class Main extends Application {
             }
         });
 
-        back.setOnAction(new EventHandler<ActionEvent>() {
+        aboutUi.addMainMenuButton().setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
+                //going to main menu scene
                 primaryStage.setScene(menu_scene);
-
+                primaryStage.setTitle(Utils.MENU_TITLE);
             }
         });
 

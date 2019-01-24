@@ -25,3 +25,12 @@
 .text .label{
     -fx-text-fill: #afafaf;
 }
+
+.text-field{
+    -fx-background-color: #eeeef0;
+    -fx-border-width: 2;
+    -fx-border-color: #a6a1a9;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-max-width: 120;
+}
