@@ -20,7 +20,7 @@ import javafx.stage.Stage;
 import java.io.FileInputStream;
 
 public class Main extends Application {
-    static String MAIN_THEME = Utils.LIGHT_THEME;
+    static String MAIN_THEME = Utils.DARK_THEME;
 
     @Override
     public void start(Stage primaryStage) throws Exception {

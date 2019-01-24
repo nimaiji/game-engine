@@ -23,6 +23,15 @@ Space grey
     -fx-background-radius: 20;
 }
 
-.ctext{
+.label{
     -fx-text-fill: #fff;
+}
+
+.text-field{
+    -fx-background-color: #c0c5ce;
+    -fx-border-width: 2;
+    -fx-border-color: #65737e;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-max-width: 120;
 }
