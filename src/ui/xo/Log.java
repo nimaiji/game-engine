@@ -1,4 +1,4 @@
-package xo;
+package ui.xo;
 
 /**
  * Created by nima on 1/23/2019 AD.

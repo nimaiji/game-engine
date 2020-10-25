@@ -17,21 +17,33 @@ Space grey
     -fx-background-radius: 20;
 }
 
-.button:hover{
-    -fx-background-color: linear-gradient(#65737e,#4f5b66);
+.button:hover {
+    -fx-background-color: linear-gradient(#65737e, #4f5b66);
     -fx-text-fill: #fff;
     -fx-background-radius: 20;
 }
 
-.label{
+.label {
     -fx-text-fill: #fff;
 }
 
-.text-field{
+.text-field {
     -fx-background-color: #c0c5ce;
     -fx-border-width: 2;
     -fx-border-color: #65737e;
     -fx-background-radius: 20;
     -fx-border-radius: 20;
     -fx-max-width: 120;
+}
+
+.rectangle {
+    -fx-background-color: #65737e;
+}
+
+.circle-1 {
+    -fx-background-color: #338bbe;
+}
+
+.circle-2 {
+    -fx-background-color: #af4c46;
 }

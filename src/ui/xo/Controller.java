@@ -1,4 +1,4 @@
-package xo;
+package ui.xo;
 
 public class Controller {
 }

@@ -1,4 +1,4 @@
-package xo;
+package ui.xo;
 
 import javafx.scene.text.Text;
 

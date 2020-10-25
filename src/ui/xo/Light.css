@@ -16,21 +16,33 @@
     -fx-background-radius: 20;
 }
 
-.button:hover{
-    -fx-background-color: linear-gradient(#c0c2ce,#d2d4dc);
+.button:hover {
+    -fx-background-color: linear-gradient(#c0c2ce, #d2d4dc);
     -fx-text-fill: #f8f8fa;
     -fx-background-radius: 20;
 }
 
-.text .label{
+.text .label {
     -fx-text-fill: #afafaf;
 }
 
-.text-field{
+.text-field {
     -fx-background-color: #eeeef0;
     -fx-border-width: 2;
     -fx-border-color: #a6a1a9;
     -fx-background-radius: 20;
     -fx-border-radius: 20;
     -fx-max-width: 120;
+}
+
+.rectangle {
+    -fx-background-color: #95969b;
+}
+
+.circle-1{
+    -fx-background-color: #205676;
+}
+
+.circle-2{
+    -fx-background-color: #76312d;
 }
