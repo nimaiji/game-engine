@@ -1,4 +1,4 @@
-# Game engine
+#  :video_game: Game engine
 > Cpp game engine with Java games & JNI game connection
 
 * Menu
